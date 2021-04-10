@@ -5,20 +5,26 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+// importy routes
+const postRoutes = require('./routes/post');
+
+
 // app
 const app = express();
+console.log(process.env.DATABASE);
+
+// db
+mongoose.connect(process.env.DATABASE, { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
+.then(() => console.log('db connected'))
+.catch((err) => console.log(err));
 
 // middlewear
 app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-// route
-app.get('*', (req, res) => {
-  res.json({
-      data: 'You reached nodejs api for react node crud app'
-  })
-});
+// route middlewear
+app.use('/api', postRoutes);
 
 
 // port
