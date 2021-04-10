@@ -8,6 +8,7 @@ const { create } = require('../controllers/post');
 router.get('/post', create);
 
 
-  module.exports = router;
+
+module.exports = router;
 
 
