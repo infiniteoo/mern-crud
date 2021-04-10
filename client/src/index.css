@@ -2,3 +2,7 @@ li {
   text-decoration: none;
   padding: 10px;
 }
+
+.badge {
+  color: black;
+}
