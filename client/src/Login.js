@@ -22,20 +22,20 @@ const Login = () => {
       const handleSubmit = event => {
           event.preventDefault();
           console.table({name, password});
-          /* axios.post(`${process.env.REACT_APP_API}/post`, { title, content, user })
+          axios.post(`${process.env.REACT_APP_API}/login`, { name, password })
           .then(response => {
-              //empty state
+              
               console.log(response)
-              setState({...state, title: '', content:'', user: ''})
-              //show success alert
-              alert(`Post titled ${response.data.title} is created.`)
+              // response will contain token and name
+              // redirect to create page
+              
     
     
           })
           .catch(error => {
               console.log(error.response)
               alert(error.response.data.error)
-          }) */
+          })
     
       }
 
