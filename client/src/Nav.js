@@ -13,6 +13,9 @@ const Nav = () => {
               <li className="nav-item pr-3 pt-3 pb-3" >
                 <Link to="/create" style={{textDecoration: "none"}}>Create</Link>    
               </li>  
+              <li className="nav-item pr-3 ml-auto pt-3 pb-3" >
+                <Link to="/login" style={{textDecoration: "none"}}>Login</Link>    
+              </li>  
             </ul>
         </nav>
     )
