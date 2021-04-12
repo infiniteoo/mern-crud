@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/infiniteoo/mern-crud#readme",
   "engines": {
-    "node": "10.16.0"
+    "node": "14.15.0"
 },"dependencies": {
   "body-parser": "^1.19.0",
   "cors": "^2.8.5",
