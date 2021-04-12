@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAAA,GACE,oBAAqB,CACrB,YACF,CAEA,OACE,UACF","file":"main.b824d89f.chunk.css","sourcesContent":["li {\n  text-decoration: none;\n  padding: 10px;\n}\n\n.badge {\n  color: black;\n}"]}
