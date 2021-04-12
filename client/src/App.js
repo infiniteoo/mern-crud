@@ -3,6 +3,9 @@ import Nav from './Nav';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import renderHTML from 'react-render-html';
+import { getUser } from './helpers';
+
+
 
 
 
@@ -66,15 +69,17 @@ const App = () => {
                       
                     </p>
                 </div>
-                <div className='col-md-2'>
-                <Link to={`/post/update/${post.slug}` } className="btn btn-sm btn-outline-warning">
-                        Update
-                    </Link>
-
-                    <button onClick={()=>deleteConfirm(post.slug)} className="btn btn-sm btn-outline-danger ml-1">
-                      Delete
-                    </button>
-                </div>
+                {getUser() && (
+                  <div className='col-md-2'>
+                  <Link to={`/post/update/${post.slug}` } className="btn btn-sm btn-outline-warning">
+                          Update
+                      </Link>
+  
+                      <button onClick={()=>deleteConfirm(post.slug)} className="btn btn-sm btn-outline-danger ml-1">
+                        Delete
+                      </button>
+                  </div>
+                )}
               
               </div>
               
