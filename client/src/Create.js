@@ -1,16 +1,28 @@
 import React, {useState} from "react";
 import axios from 'axios';
 import Nav from './Nav'
+import ReactQuill from 'react-quill';
+import { getUser } from './helpers'
+import 'react-quill/dist/quill.bubble.css';
 
 const Create = () => {
 
   const [state, setState] = useState({
       title: '',
-      content: '',
-      user: ''
+      user: getUser()
   });
   
-  const {title, content, user} = state;
+  const [content, setContent] = useState('');
+
+  // rich text editor handle change
+
+  const handleContent = (event) => {
+      console.log(event);
+      setContent(event);
+
+  }
+
+  const {title, user} = state;
 
   const handleChange = (name) => (event) => {
     console.log('name', name, 'event', event.target.value)
@@ -51,9 +63,15 @@ const Create = () => {
          </div>
          <div className='form-group'>
              <label className='text-muted'>Content</label>
-             <textarea onChange={handleChange('content')} value={content} type='text' className='form-control' placeholder="Write something" required>
 
-             </textarea>
+             <ReactQuill 
+             onChange={handleContent} value={content} theme="bubble" className='pb-5 mb-3' placeholder="Write something" style={{border: '1px solid #666'}}
+               
+             />
+
+             
+
+             
              
          </div>
          <div className='form-group'>
