@@ -2,8 +2,9 @@ import React, {useState} from "react";
 import axios from 'axios';
 import Nav from './Nav'
 import ReactQuill from 'react-quill';
-import { getUser } from './helpers'
+import { getUser, getToken } from './helpers'
 import 'react-quill/dist/quill.bubble.css';
+
 
 const Create = () => {
 
@@ -32,7 +33,11 @@ const Create = () => {
 
   const handleSubmit = event => {
       event.preventDefault();
-      axios.post(`${process.env.REACT_APP_API}/post`, { title, content, user })
+      axios.post(`${process.env.REACT_APP_API}/post`, { title, content, user }, {
+          headers: {
+              authorization: `Bearer ${getToken()}`
+          }
+      })
       .then(response => {
           //empty state
           console.log(response)
