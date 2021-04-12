@@ -1,0 +1,22 @@
+{
+  "name": "mern-crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infiniteoo/mern-crud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/infiniteoo/mern-crud/issues"
+  },
+  "homepage": "https://github.com/infiniteoo/mern-crud#readme"
+}
