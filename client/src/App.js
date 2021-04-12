@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Nav from './Nav';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import renderHTML from 'react-render-html';
+
 
 
 const App = () => {
@@ -56,7 +58,7 @@ const App = () => {
                       <h2>{post.title}</h2>
                     </Link>
                     
-                    <p className="lead">{post.content.substring(0,100)}</p>
+                    <div className="lead pt-3">{renderHTML(post.content.substring(0,100))}</div>
 
                     <p>
                       Author <span className="badge">{post.user}</span> Published on 

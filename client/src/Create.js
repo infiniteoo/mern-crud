@@ -36,7 +36,8 @@ const Create = () => {
       .then(response => {
           //empty state
           console.log(response)
-          setState({...state, title: '', content:'', user: ''})
+          setState({...state, title: '', user: ''});
+          setContent('');
           //show success alert
           alert(`Post titled ${response.data.title} is created.`)
 
